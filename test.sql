@@ -8,9 +8,9 @@ CREATE TABLE states {
 
 --2
 CREATE TABLE cities {
- id SERIAL NOT NULL PRIMARY KEY,
- name  TEXT NOT NULL,
- "stateId" INTEGER REFERENCES states(id)
+     id SERIAL NOT NULL PRIMARY KEY,
+     name  TEXT NOT NULL,
+     "stateId" INTEGER REFERENCES states(id)
 };
 
 
@@ -18,10 +18,10 @@ CREATE TABLE cities {
 CREATE TYPE "phone" AS ENUM ('landline', 'mobile');
 
 CREATE TABLE "customerPhones"{
- id SERIAL NOT NULL PRIMARY KEY
- "customerId" INTEGER REFERENCES customers(id)
- number  NUMERIC NOT NULL
- type "phone" NOT NULL
+    id SERIAL NOT NULL PRIMARY KEY
+    "customerId" INTEGER REFERENCES customers(id)
+    number  NUMERIC NOT NULL
+    type "phone" NOT NULL
 };
 
 --4
