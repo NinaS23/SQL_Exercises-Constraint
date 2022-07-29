@@ -6,3 +6,9 @@ CREATE TABLE states {
 	name TEXT NOT NULL  UNIQUE
 };
 --2
+
+CREATE TABLE cities {
+ id SERIAL NOT NULL PRIMARY KEY
+ name TEXT NOT NULL
+ "stateId" INTEGER REFERENCES states(id)
+};
