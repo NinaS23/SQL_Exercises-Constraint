@@ -5,10 +5,18 @@ CREATE TABLE states {
     id SERIAL NOT NULL PRIMARY KEY,
 	name TEXT NOT NULL  UNIQUE
 };
---2
 
+--2
 CREATE TABLE cities {
- id SERIAL NOT NULL PRIMARY KEY
- name TEXT NOT NULL
+ id SERIAL NOT NULL PRIMARY KEY,
+ name  TEXT NOT NULL,
  "stateId" INTEGER REFERENCES states(id)
+};
+
+--3
+CREATE TABLE "customerPhones"{
+ id SERIAL NOT NULL PRIMARY KEY
+ "customerId" INTEGER REFERENCES customers(id)
+ number  NUMERIC NOT NULL
+ type VARCHAR (15) NOT NULL
 };
