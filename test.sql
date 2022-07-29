@@ -1,1 +1,8 @@
+CREATE DATABASE  magicbanck;
+
 -- 1
+CREATE TABLE states {
+    id SERIAL NOT NULL PRIMARY KEY,
+	name TEXT NOT NULL  UNIQUE
+};
+--2
