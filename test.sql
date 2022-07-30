@@ -20,7 +20,7 @@ CREATE TYPE "phone" AS ENUM ('landline', 'mobile');
 CREATE TABLE "customerPhones"{
     id SERIAL NOT NULL PRIMARY KEY,
     "customerId" INTEGER REFERENCES customers(id),
-    number  NUMERIC NOT NULL,
+    number  TEXT NOT NULL,
     type "phone" NOT NULL
 };
 
