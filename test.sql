@@ -17,6 +17,7 @@ CREATE TABLE cities {
 
 
 --3
+
 CREATE TYPE "phone" AS ENUM ('landline', 'mobile');
 
 CREATE TABLE "customerPhones"{
@@ -67,7 +68,7 @@ CREATE TABLE transactions (
 	"bankAccountId"	INTEGER NOT NULL REFERENCES "bankAccount"(id),
 	amount INTEGER NOT NULL,
 	type "transaction" NOT NULL,
-	"time" TIMESTAMP WITHOUT TIME ZONE NOT NULL DEFAULT NOW(),
+	"time" TIMESTAMP  NOT NULL DEFAULT NOW(),
 	description TEXT NOT NULL,
 	cancelled BOOLEAN NOT NULL DEFAULT false
 );
