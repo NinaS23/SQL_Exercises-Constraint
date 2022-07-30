@@ -20,6 +20,7 @@ CREATE TABLE cities {
 
 CREATE TYPE "phone" AS ENUM ('landline', 'mobile');
 
+
 CREATE TABLE "customerPhones"{
     id SERIAL NOT NULL PRIMARY KEY,
     "customerId" INTEGER REFERENCES customers(id),
@@ -62,6 +63,7 @@ CREATE TABLE "bankAccount" (
 --7
 
 CREATE TYPE "transaction" AS ENUM ('deposit', 'withdraw'); 
+
 
 CREATE TABLE transactions (
 	id SERIAL NOT NULL PRIMARY KEY,
