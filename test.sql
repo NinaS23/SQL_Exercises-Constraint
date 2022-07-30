@@ -1,12 +1,14 @@
 CREATE DATABASE  magicbanck;
 
 -- 1
+
 CREATE TABLE states {
     id SERIAL NOT NULL PRIMARY KEY,
 	name TEXT NOT NULL  UNIQUE
 };
 
 --2
+
 CREATE TABLE cities {
      id SERIAL NOT NULL PRIMARY KEY,
      name  TEXT NOT NULL,
@@ -25,6 +27,7 @@ CREATE TABLE "customerPhones"{
 };
 
 --4
+
 CREATE TABLE "customerAddresses" (
 	id SERIAL NOT NULL PRIMARY KEY,
 	"customerId" INTEGER NOT NULL  REFERENCES customers(id),
@@ -36,6 +39,7 @@ CREATE TABLE "customerAddresses" (
 );
  
  --5
+
 CREATE TABLE  customers (
 	id SERIAL NOT NULL PRIMARY KEY,
 	"fullName" TEXT NOT NULL,
@@ -55,6 +59,7 @@ CREATE TABLE "bankAccount" (
 );
 
 --7
+
 CREATE TYPE "transaction" AS ENUM ('deposit', 'withdraw'); 
 
 CREATE TABLE transactions (
@@ -68,6 +73,7 @@ CREATE TABLE transactions (
 );
 
 --8
+
 CREATE TABLE "creditCards" (
 	id SERIAL NOT NULL PRIMARY KEY,
 	"bankAccountId"	INTEGER NOT NULL REFERENCES "bankAccount"(id),
